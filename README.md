@@ -1,11 +1,6 @@
 # House-Price-Prediction
 
-### Tools Requuired-
-1. Github
-2. VS Code
-3. Heroku
-4. Git CLI
 
+link : https://house-price-pred-api.herokuapp.com/
 
-Create a new env
-anaconda - conda create -p venv python==3.7 -y
+currently under development in a CI/CD Pipeline
