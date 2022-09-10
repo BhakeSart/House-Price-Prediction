@@ -7,7 +7,7 @@
     <meta name="author" content="Sarthak Bhake">
     <meta name="Keywords" content="Flask, Machine Learning, Artificial Intelligence, AI, ML, Web Development">
     <meta name="description" content="A Prediction website for diseases using Machine Learning.">
-    <title>Liver Disease Prediction</title>
+    <title>House Price Prediction</title>
     <!-- <link rel="icon" href="{{ url_for('static', filename = 'logo1.png') }}" type="image/icon type"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,7 +28,10 @@
         body {
             height: 100%;
             margin: 0;
-            background-color: #97D2EC;
+            background-image: url(https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         header {
@@ -57,48 +60,33 @@
 
 <body>
 
-    <br>
-    <br>
-    <br>
 
+    <br>
+    <br>
     <main>
-        <div class="row" style="margin-bottom: 175px;">
+        <div class="row" style="margin-bottom: 175px; color: #100720;">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <center>
                     <h1>House Price Prediction</h1>
                 </center>
                 <center>
-                    <br>
-                    <br>
 
+                    <br>
                     <div class="card card-body" style="border: 1px solid black; border-radius: 1em;">
                         <form class="form-horizontal" action="/predict" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Age" placeholder="Age">
+                                            name="CRIM" placeholder="per capita crime rate (CRIM)">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Total_Bilirubin" placeholder="Total Bilirubin">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Direct_Bilirubin" placeholder="Direct Bilirubin">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Alkaline_Phosphotase" placeholder="Alkaline Phosphotase">
+                                            name="ZN"
+                                            placeholder="proportion of residential land zoned for lots over 25,000 sq.ft (ZN)">
                                     </div>
                                 </div>
                             </div>
@@ -106,27 +94,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Alamine_Aminotransferase" placeholder="Alamine Aminotransferase">
+                                            name="INDUS"
+                                            placeholder="proportion of non-retail business acres per town (INDUS)">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Aspartate_Aminotransferase" placeholder="Aspartate Aminotransferase">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Total_Protiens" placeholder="Total Protiens">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Albumin" placeholder="Albumin">
+                                            name="CHAS" placeholder="Charles River dummy variable (CHAS)">
                                     </div>
                                 </div>
                             </div>
@@ -134,13 +109,63 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Albumin_and_Globulin_Ratio" placeholder="Albumin and Globulin Ratio">
+                                            name="NOX"
+                                            placeholder="nitric oxides concentration (parts per 10 million) (NOX)">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input style="border: 1px solid black;" class="form-control" type="text"
-                                            name="Gender_Male" placeholder="Gender (Male: 1, Female: 0)">
+                                            name="RM" placeholder="average number of rooms per dwelling (RM)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="AGE"
+                                            placeholder="proportion of owner-occupied units built prior to 1940 (AGE)">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="DIS"
+                                            placeholder="weighted distances to five Boston employment centres (DIS)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="RAD" placeholder="index of accessibility to radial highways (RAD)">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="TAX" placeholder="full-value property-tax rate per $10,000 (TAX)">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="PTRATIO" placeholder="pupil-teacher ratio by town (PTRATIO)">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="B"
+                                            placeholder="1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input style="border: 1px solid black;" class="form-control" type="text"
+                                            name="LSTAT" placeholder="% lower status of the population (LSTAT)">
                                     </div>
                                 </div>
                             </div>
@@ -150,18 +175,21 @@
                     <center>
             </div>
             <div class="col-md-2"></div>
+            <div class="row" style="margin-bottom: 477px;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+                    <div class="card card-body alert alert-success">
+                        <center>{{prediction_text}}</center>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
         </div>
     </main>
-    <!-- <footer>
-        <center>
-            <ul style="list-style-type:none;">
-                <li>
-                    <p style="color: white;">Made<span> by ETD_03 Group</span>
-                    </p>
-                </li>
-            </ul>
-        </center>
-    </footer> -->
+
 </body>
 
 </html>
